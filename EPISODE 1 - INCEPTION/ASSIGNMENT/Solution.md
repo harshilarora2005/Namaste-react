@@ -28,7 +28,6 @@ A `framework` is a `set of pre-written code` that provides a structure for devel
 A `library` is a `collection of packages` that perform specific operations whereas a `framework` contains the basic flow and architecture of an application. The major difference between them is the complexity. Libraries contain a number of methods that a developer can just call whenever they write code. React js is library and Angular is Framework.
 
 The `framework` provides the flow of a software application and tells the developer what it needs and calls the code provided by the developer as required. If a `library` is used, the application calls the code from the library.
-### Additional Resources :)  [Click Me](https://www.freecodecamp.org/news/the-difference-between-a-framework-and-a-library-bd133054023f/)
 
 
 ## Ques): What is `CDN`? Why do we use it?
