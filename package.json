@@ -1,0 +1,29 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "Hi its me harshil :)",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshilarora2005/Namaste-react.git"
+  },
+  "author": "Harshil Arora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshilarora2005/Namaste-react/issues"
+  },
+  "homepage": "https://github.com/harshilarora2005/Namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserslist" : [
+    "last 2 versions"
+  ]
+}
