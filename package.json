@@ -4,7 +4,9 @@
   "description": "Hi its me harshil :)",
   "main": "App.js",
   "scripts": {
-    "test": "jest"
+    "start": "parcel index.html",
+    "test": "jest",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -17,13 +19,14 @@
   },
   "homepage": "https://github.com/harshilarora2005/Namaste-react#readme",
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "browserslist" : [
+  "browserslist": [
     "last 2 versions"
   ]
 }
