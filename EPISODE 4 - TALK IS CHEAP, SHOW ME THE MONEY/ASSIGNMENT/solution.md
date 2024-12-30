@@ -59,6 +59,10 @@ When? Keys are needed when rendering lists of elements to help React distinguish
   <div key={item.id}>{item.name}</div>
 ))}
 ```
+<<<<<<< HEAD
+=======
+
+>>>>>>> cf80d03deba4f284ec7665c6573d88ca3d714cc5
 ### 10. Can we use index as keys in React?
 Using the index as a key is not recommended because it can lead to unexpected UI behavior if the list is re-ordered or updated. Instead, use unique IDs whenever possible.
 
