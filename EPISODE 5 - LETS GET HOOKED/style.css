@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins,'sans-serif';
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: lightcyan;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.nav-items{
+    align-self: center;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.logo-container img{
+    height: 7em;
+    width: 7em;
+    background-color: transparent;
+}
+.logo-container img:hover{
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.2);
+}
+.nav-items ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-items ul li{
+    cursor: pointer;
+    padding: 10px;
+}
+.nav-items ul li:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+.res-card{
+    width:250px;
+    height: 300px;
+    margin:10px;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+.res-container{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    justify-content: center;
+}
+.res-logo{
+    width: 101%;
+    border-radius: 10px;
+    height:180px;
+
+}
+.res-head{
+    margin-left:5px ;
+    gap:5px;
+    display: flex;
+}
+.rating{
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.res-body{
+    margin-left: 5px;
+    font-weight: 200;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.res-body p {
+    white-space: nowrap;
+    overflow: hidden;    
+    text-overflow: ellipsis; 
+    margin: 0; 
+}
+.res-card:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.search {
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.search input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.filter-btn {
+    background-color: #4caf50; 
+    color: white;
+}
+
+.filter-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
+.reset-btn {
+    background-color: #f44336; 
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
