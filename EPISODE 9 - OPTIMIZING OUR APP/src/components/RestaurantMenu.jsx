@@ -4,7 +4,6 @@ import { RestaurantMenuShimmer } from "./Shimmer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from "react-router";
-import "../ResturantMenu.css";
 import useResturantMenu from "../utils/useResturantMenu";
 const RestaurantMenu = () => {
     const { resId } = useParams();

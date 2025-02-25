@@ -4,7 +4,7 @@
   "description": "Hi its me harshil :)",
   "main": "App.js",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel EPI10/index.html",
     "test": "jest",
     "build": "parcel build index.html"
   },
@@ -20,14 +20,18 @@
   "homepage": "https://github.com/harshilarora2005/Namaste-react#readme",
   "devDependencies": {
     "parcel": "^2.13.3",
-    "process": "^0.11.10"
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^4.0.8"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.1.1",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tailwindcss/postcss": "^4.0.8",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
     "react": "^18.3.1",

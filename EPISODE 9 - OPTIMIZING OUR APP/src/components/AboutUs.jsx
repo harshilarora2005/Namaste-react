@@ -1,9 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import burgerImage from "../../../public/images/burger-image.png";
-import "../aboutUs.css";
 import Profile from "./Profile";
-import ProfileClass from "./ProfileClass";
 const AboutUs = () => {
     const [showUser, setShowUser] = useState(false);
     return (
@@ -15,7 +13,6 @@ const AboutUs = () => {
                 </button>
                 }
                 {showUser && <Profile name={"Harshil Arora"} location={"Delhi"}/>}
-                {showUser && <ProfileClass name={"Harshil Arora"} location={"Delhi"}/>}
             </div>
             <div className="about">
                 <div className="about-left">
