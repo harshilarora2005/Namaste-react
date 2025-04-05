@@ -4,7 +4,7 @@
   "description": "Hi its me harshil :)",
   "main": "App.js",
   "scripts": {
-    "start": "parcel react-layout-designer/public/index.html",
+    "start": "parcel grid-layout-designer/public/index.html",
     "test": "jest",
     "build": "parcel build index.html"
   },
@@ -22,7 +22,7 @@
     "parcel": "^2.13.3",
     "postcss": "^8.5.3",
     "process": "^0.11.10",
-    "tailwindcss": "^4.0.8"
+    "tailwindcss": "^4.0.14"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.1.1",
@@ -32,7 +32,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@material-tailwind/react": "^2.1.10",
-    "@tailwindcss/postcss": "^4.0.8",
+    "@tailwindcss/postcss": "^4.0.14",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
     "lucide-react": "^0.476.0",
@@ -44,7 +44,6 @@
     "react-resizable": "^3.0.5",
     "react-rnd": "^10.5.2",
     "react-router": "^7.1.5",
-    "react-syntax-highlighter": "^15.6.1",
     "shimmer-effects-react": "^1.0.4",
     "yup": "^1.6.1"
   },
