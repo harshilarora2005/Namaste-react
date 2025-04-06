@@ -1,41 +1,22 @@
 import RestaurantCard from "./ResturantCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {useState,useEffect} from "react";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import {
-    SWIGGY_API_URL,
-    SWIGGY_REST_API_PATH,
-} from "../../../public/common/constants";
 import { Shimmer } from "./Shimmer";
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestaurants from "../utils/useResturants"; 
 const Body= () => {
-    const [resData,setList]=useState([]);
-    const [searchRestaurant, setSearchRestaurant] = useState("");
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-    const [restaurantName, setRestaurantName] = useState("");
-    const handleSearch = () => {
-        const filtered = resData.filter((res) =>
-            res.info.name.toLowerCase().includes(searchRestaurant.toLowerCase())
-        );
+    const {
+        loading,
+        filteredRestaurants,
+        searchRestaurant,
+        setSearchRestaurant,
+        handleSearch,
+        resData,
+        loadMore,
+        hasMore
+    } = useRestaurants();
     
-        setFilteredRestaurants(filtered);
-        setRestaurantName(searchRestaurant);
-    };
-    useEffect(()=>{
-        fetchData();
-    },[]);
-    const fetchData = async () => {
-        try {
-            const data = await fetch(SWIGGY_API_URL);
-            const json = await data.json();
-            const restaurants = eval("json?." + SWIGGY_REST_API_PATH) || [];
-            setList(restaurants);
-            setFilteredRestaurants(restaurants);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    };
     const OnlineStatus=useOnlineStatus();
     if (!OnlineStatus) {
         return (
@@ -46,8 +27,11 @@ const Body= () => {
             </div>
         );
     }
-    if(resData.length==0){
+    if(loading){
         return <Shimmer/>;
+    }
+    if (resData.length === 0) {
+        return <div>No restaurants found.</div>;
     }
     return (
         <div className="p-5">
@@ -58,7 +42,7 @@ const Body= () => {
                 placeholder="Search restaurants..."
                 value={searchRestaurant}
                 onChange={(e) => setSearchRestaurant(e.target.value)}
-                onKeyPress={(e) => {
+                onKeyDown={(e) => {
                     if (e.key === "Enter") {
                     handleSearch();
                     }
@@ -83,6 +67,16 @@ const Body= () => {
                 </h2>
                 )}
             </div>
+            {/* {hasMore && (
+                <div className="flex justify-center my-6">
+                    <button
+                        onClick={loadMore}
+                        className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+                    >
+                        Show More
+                    </button>
+                </div>
+            )} */}
         </div>
     );
 };

@@ -25,7 +25,7 @@ const RestaurantCard = ({
                 <div className="flex items-center gap-3 mt-1">
                 <p
                     className={`text-white text-sm font-semibold px-2 py-1 rounded-md flex items-center gap-1 ${
-                    avgRating > 4.2 ? "bg-green-500" : "bg-red-500"
+                    avgRating >= 4.0 ? "bg-green-500" : "bg-red-500"
                     }`}
                 >
                     {avgRating}
