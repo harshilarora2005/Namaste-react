@@ -6,6 +6,7 @@ import { Link, useNavigate} from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { clearCart } from "../utils/cartSlice";
 const Header = () => {
     const {isLoggedIn,setIsLoggedIn,loggedInUser,setUserName}=useContext(UserContext);
     const onlineStatus = useOnlineStatus();
@@ -18,6 +19,9 @@ const Header = () => {
             navigate("/login");
         }
     };
+    //subscribing to cart Slice of the store...
+    const cart = useSelector((store)=>store.cart.items);
+    clearCart();
     return (
         <div className="font-sans text-gray-900 flex justify-between border-2 border-black bg-[#FBF5DD] shadow-md rounded-b-[15px] px-4 py-2">
             <div className="flex gap-5">
@@ -43,9 +47,6 @@ const Header = () => {
                 <Link to="/" className="hover:scale-105 transition duration-200">
                 Home
                 </Link>
-                <Link to="/grocery" className="hover:scale-105 transition duration-200">
-                Grocery
-                </Link>
                 <Link to="/about" className="hover:scale-105 transition duration-200">
                 About Us
                 </Link>
@@ -58,12 +59,15 @@ const Header = () => {
                 >
                     {isLoggedIn ? "Logout" : "Login"}
                 </button>
-                <button className="relative">
+                
+                <button className="relative"
+                onMouseDown={()=>navigate("/cart")}
+                >
                 <FontAwesomeIcon
                     icon={faCartShopping}
                     className="text-xl cursor-pointer hover:scale-110 transition duration-200"
                 />
-                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">20</div>
+                <div className="absolute inline-flex items-center justify-center w-4 h-4 text-xs text-white bg-[#7289da] border-1 border-white rounded-full -top-2 -end-2 dark:border-gray-900">{cart.length}</div>
                 </button>
 
                 {/* Online Status */}
