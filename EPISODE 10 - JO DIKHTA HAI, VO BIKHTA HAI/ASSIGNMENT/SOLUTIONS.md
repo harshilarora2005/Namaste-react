@@ -1,108 +1,102 @@
-# Chapter 09 - Optimizing our App
+# Chapter 10 - Jo Dikhta Hai Vo Bikta Hai
 
-### When and why do we need `lazy()`?
-React's `lazy()` function is used for code splitting, allowing us to load components only when they are needed. This improves the initial load time of our application and enhances performance by reducing the amount of JavaScript that needs to be downloaded and executed upfront.
+## Theory
 
-We need `lazy()` when:
-- Our application has large components that are not required immediately.
-- We want to optimize performance by deferring the loading of non-essential components.
-- We aim to improve the user experience by reducing the initial bundle size.
+### ● Explore all the ways of writing CSS:
+1. **External CSS**:
+   - Write CSS in a separate `.css` file and link it in HTML or import in JS.
+   - Ex: `styles.css`
 
-#### Example:
-```javascript
-import React, { lazy, Suspense } from 'react';
+2. **Inline CSS**:
+   - Add CSS directly on an element via the `style` attribute.
+   - Ex: `<div style={{ color: 'red' }}>Hello</div>`
 
-const LazyComponent = lazy(() => import('./LazyComponent'));
+3. **Internal CSS**:
+   - CSS written within a `<style>` tag in HTML file.
+   - Not used in component-based React apps.
 
-function App() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <LazyComponent />
-    </Suspense>
-  );
-}
+4. **CSS-in-JS**:
+   - Libraries like `styled-components`, `emotion`.
+   - Styles are written using JavaScript.
 
-export default App;
+5. **Preprocessors (SCSS/SASS/LESS)**:
+   - Superset of CSS with variables, nesting, mixins etc.
+
+6. **Utility-first CSS frameworks**:
+   - Tailwind CSS: Apply prebuilt utility classes in HTML/JSX.
+
+7. **CSS Modules**:
+   - Scoped CSS files imported per component (e.g., `Component.module.css`).
+
+---
+
+### ● How do we configure Tailwind?
+
+1. Install Tailwind:
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-### What is Suspense?
-`Suspense` is a React component that enables fallback UI while waiting for asynchronous operations, such as lazy-loaded components or data fetching, to complete.
-
-- It acts as a wrapper around lazy-loaded components.
-- It provides a loading state while the component is being fetched.
-- It prevents UI from breaking due to missing or delayed components.
-
-#### Example:
-```javascript
-<Suspense fallback={<div>Loading...</div>}>
-  <LazyComponent />
-</Suspense>
+2. Configure `tailwind.config.js`:
+```js
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
 ```
 
-### Why did we get this error: 
-#### *"A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition?"* 
-
-This error occurs when a component is suspended during a synchronous update, such as an immediate user interaction. When this happens, React does not know how to handle the transition smoothly and replaces the UI with a loading state, which can create a jarring experience.
-
-#### How does Suspense fix this error?
-Suspense fixes this issue by allowing us to specify a fallback UI while waiting for the component to load. However, to prevent the UI from being replaced unexpectedly, React provides `startTransition()`, which allows us to mark updates as non-urgent so that React can handle them smoothly without affecting the user's immediate interactions.
-
-#### Example using `startTransition()`:
-```javascript
-import { startTransition, useState } from 'react';
-
-function App() {
-  const [text, setText] = useState('');
-
-  const handleChange = (event) => {
-    startTransition(() => {
-      setText(event.target.value);
-    });
-  };
-
-  return <input type="text" onChange={handleChange} value={text} />;
-}
+3. Add Tailwind directives to your CSS:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
-### Advantages and Disadvantages of using this Code Splitting Pattern
-
-#### Advantages:
-- **Improved Performance:** Reduces initial bundle size by loading components only when needed.
-- **Better User Experience:** Avoids blocking the main thread and improves perceived performance.
-- **Optimized Memory Usage:** Prevents unnecessary loading of unused components.
-- **Scalability:** Makes large applications more manageable by breaking them into smaller chunks.
-
-#### Disadvantages:
-- **Increased Complexity:** Requires additional logic to handle fallback UI and error boundaries.
-- **Potential Loading Delays:** Users may experience brief loading states when navigating between lazy-loaded components.
-- **Not Suitable for All Components:** Frequently used components may not benefit significantly from lazy loading.
-
-### When do we and why do we need Suspense?
-
-We use Suspense when:
-- We are loading components lazily using `React.lazy()`.
-- We are fetching data asynchronously with libraries like React Server Components or Relay.
-- We need a smooth transition while waiting for components or data to be ready.
-
-#### Example using Suspense with Data Fetching:
-```javascript
-import React, { Suspense } from 'react';
-import fetchData from './fetchData';
-
-const DataComponent = React.lazy(() => fetchData());
-
-function App() {
-  return (
-    <Suspense fallback={<div>Loading data...</div>}>
-      <DataComponent />
-    </Suspense>
-  );
-}
-
-export default App;
+4. Import that CSS file in your React `index.js` or `App.js`:
+```js
+import './index.css';
 ```
 
-Suspense is crucial for maintaining a seamless user experience, ensuring that users do not encounter broken UI while content is being loaded. It helps manage async behavior effectively in a React application.
+---
+
+### ● In tailwind.config.js, what do the keys mean?
+
+- **`content`**:
+  - Tells Tailwind where to look for class names (purge unused CSS).
+  - Example: `['./src/**/*.{js,jsx,ts,tsx}']`
+
+- **`theme`**:
+  - Default design tokens like colors, spacing, fontSizes, breakpoints.
+
+- **`extend`**:
+  - Extend or override default Tailwind theme without full replacement.
+
+- **`plugins`**:
+  - Add Tailwind plugins (forms, typography, etc).
+
+---
+
+### ● Why do we have `.postcssrc` file?
+
+- PostCSS is a tool to transform CSS with JavaScript.
+- Tailwind uses it internally.
+- `.postcssrc` or `postcss.config.js` tells PostCSS which plugins to use (like Tailwind and Autoprefixer).
+
+Example:
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+Without it, Tailwind’s processing won’t work properly.
 
 ---
 

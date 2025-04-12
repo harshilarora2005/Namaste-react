@@ -1,0 +1,96 @@
+{
+    "id": "36743",
+    "name": "Short Crust: Cakes & More",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/10/3/218442e6-a9cd-4eb8-adee-2e6d6d35fe50_36743.jpg",
+    "locality": "Lal Sai Mandir Marg",
+    "areaName": "Janakpuri",
+    "costForTwo": "₹400 for two",
+    "cuisines": [
+        "Cakes & Pastries",
+        "Bakery",
+        "Desserts",
+        "Snacks"
+    ],
+    "avgRating": 4.6,
+    "veg": true,
+    "parentId": "14108",
+    "avgRatingString": "4.6",
+    "totalRatingsString": "21K+",
+    "sla": {
+        "deliveryTime": 16,
+        "lastMileTravel": 1.1,
+        "serviceability": "SERVICEABLE",
+        "slaString": "15-20 mins",
+        "lastMileTravelString": "1.1 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2025-04-13 00:00:00",
+        "opened": true
+    },
+    "badges": {
+        "imageBadges": [
+            {
+                "imageId": "bolt/bolt%206.png",
+                "description": "bolt!"
+            }
+        ],
+        "textExtendedBadges": [
+            {
+                "iconId": "guiltfree/GF_Logo_android_3x",
+                "shortDescription": "options available",
+                "fontColor": "#7E808C"
+            }
+        ]
+    },
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {
+                "badgeObject": [
+                    {
+                        "attributes": {
+                            "description": "bolt!",
+                            "imageId": "bolt/bolt%206.png"
+                        }
+                    }
+                ]
+            },
+            "textBased": {},
+            "textExtendedBadges": {
+                "badgeObject": [
+                    {
+                        "attributes": {
+                            "description": "",
+                            "fontColor": "#7E808C",
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "aggregatedDiscountInfoV3": {
+        "header": "₹100 OFF",
+        "subHeader": "ABOVE ₹249",
+        "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+        "aggregatedRating": {
+            "rating": "--"
+        }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+}
